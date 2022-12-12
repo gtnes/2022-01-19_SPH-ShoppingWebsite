@@ -125,13 +125,11 @@ import { computed } from 'vue'
     name: 'Trade',
 
     methods: {
-      getUserAddressList(){
-        this.$store.dispatch("getUserAddressList")
-      }
+
     },
 
     mounted() {
-      this.getUserAddressList()
+      this.$store.dispatch("getUserAddressInfo")
     },
     
   }
