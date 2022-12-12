@@ -1,0 +1,299 @@
+{
+    "code": 200,
+    "message": "成功",
+    "data": {
+        "trademarkList": [
+            {
+                "tmId": 1,
+                "tmName": "小米"
+            },
+            {
+                "tmId": 6,
+                "tmName": "VIVO"
+            },
+            {
+                "tmId": 25,
+                "tmName": "华硕"
+            },
+            {
+                "tmId": 27,
+                "tmName": "戴尔"
+            },
+            {
+                "tmId": 2,
+                "tmName": "苹果"
+            },
+            {
+                "tmId": 3,
+                "tmName": "华为"
+            },
+            {
+                "tmId": 5,
+                "tmName": "OPPO"
+            },
+            {
+                "tmId": 20079,
+                "tmName": "春风测试4"
+            },
+            {
+                "tmId": 20460,
+                "tmName": "123"
+            }
+        ],
+        "attrsList": [
+            {
+                "attrId": 106,
+                "attrValueList": [
+                    "安卓手机",
+                    "苹果手机"
+                ],
+                "attrName": "手机系统"
+            },
+            {
+                "attrId": 107,
+                "attrValueList": [
+                    "1200mAh以下",
+                    "1200mAh到3000mAh",
+                    "3000mAh以上"
+                ],
+                "attrName": "电池容量"
+            },
+            {
+                "attrId": 24,
+                "attrValueList": [
+                    "256G",
+                    "64G",
+                    "128G"
+                ],
+                "attrName": "机身内存"
+            },
+            {
+                "attrId": 111,
+                "attrValueList": [
+                    "5G骁龙768G",
+                    "骁龙730G",
+                    "骁龙439",
+                    "骁龙845"
+                ],
+                "attrName": "CPU型号"
+            },
+            {
+                "attrId": 23,
+                "attrValueList": [
+                    "256G",
+                    "128G",
+                    "12G",
+                    "6G"
+                ],
+                "attrName": "运行内存"
+            },
+            {
+                "attrId": 112,
+                "attrValueList": [
+                    "6.0-6.24英寸",
+                    "6.95英寸及以上"
+                ],
+                "attrName": "屏幕尺寸"
+            },
+            {
+                "attrId": 5505,
+                "attrValueList": [
+                    "IQOO",
+                    "苹果"
+                ],
+                "attrName": "品牌"
+            },
+            {
+                "attrId": 2493,
+                "attrValueList": [
+                    "hello"
+                ],
+                "attrName": "网易云"
+            },
+            {
+                "attrId": 2557,
+                "attrValueList": [
+                    "毛不易"
+                ],
+                "attrName": "QQ音乐"
+            }
+        ],
+        "goodsList": [
+            {
+                "id": 2841,
+                "defaultImg": "http://139.198.127.41:9000/sph/20221122/O1CN018HG5Sj2FLJ7Y1g9B3_!!2213856588863.jpg_Q75.jpg",
+                "title": "Apple iPhone 13 Pro Max (A2644) 128GB 远峰蓝色 支持移动联通电信5G 双卡双待手机",
+                "price": 8899.0,
+                "createTime": null,
+                "tmId": null,
+                "tmName": null,
+                "category1Id": null,
+                "category1Name": null,
+                "category2Id": null,
+                "category2Name": null,
+                "category3Id": null,
+                "category3Name": null,
+                "hotScore": 0,
+                "attrs": null
+            },
+            {
+                "id": 2901,
+                "defaultImg": "http://139.198.127.41:9000/sph/20221123/O1CN01Ib5NMJ1hW7UW7s3ek_!!6000000004284-0-remus.jpg_Q75.jpg",
+                "title": "Redmi K50 天玑8100 2K屏幕智能游戏拍照5g手机小米官方旗舰店官网红米k50小米",
+                "price": 12313.0,
+                "createTime": null,
+                "tmId": null,
+                "tmName": null,
+                "category1Id": null,
+                "category1Name": null,
+                "category2Id": null,
+                "category2Name": null,
+                "category3Id": null,
+                "category3Name": null,
+                "hotScore": 0,
+                "attrs": null
+            },
+            {
+                "id": 1504,
+                "defaultImg": "http://139.198.127.41:9000/sph/20221103/7514343f86b1f4a72cc689ed46d79bd3.jpeg",
+                "title": "本兮",
+                "price": 5.0,
+                "createTime": null,
+                "tmId": null,
+                "tmName": null,
+                "category1Id": null,
+                "category1Name": null,
+                "category2Id": null,
+                "category2Name": null,
+                "category3Id": null,
+                "category3Name": null,
+                "hotScore": 0,
+                "attrs": null
+            },
+            {
+                "id": 1623,
+                "defaultImg": "http://47.93.148.192:8080/group1/M00/07/BA/rBHu8mNnbyeASnKlAAAdqpXMD-A503.jpg",
+                "title": "迪迦",
+                "price": 2.0,
+                "createTime": null,
+                "tmId": null,
+                "tmName": null,
+                "category1Id": null,
+                "category1Name": null,
+                "category2Id": null,
+                "category2Name": null,
+                "category3Id": null,
+                "category3Name": null,
+                "hotScore": 0,
+                "attrs": null
+            },
+            {
+                "id": 3177,
+                "defaultImg": "http://47.93.148.192:8080/group1/M00/08/07/rBHu8mN_J1-AFc7vAADM-4iQmsQ352.png",
+                "title": "11",
+                "price": 1.0,
+                "createTime": null,
+                "tmId": null,
+                "tmName": null,
+                "category1Id": null,
+                "category1Name": null,
+                "category2Id": null,
+                "category2Name": null,
+                "category3Id": null,
+                "category3Name": null,
+                "hotScore": 0,
+                "attrs": null
+            },
+            {
+                "id": 2701,
+                "defaultImg": "http://139.198.127.41:9000/sph/20221119/banner1.jpg",
+                "title": "123",
+                "price": 123.0,
+                "createTime": null,
+                "tmId": null,
+                "tmName": null,
+                "category1Id": null,
+                "category1Name": null,
+                "category2Id": null,
+                "category2Name": null,
+                "category3Id": null,
+                "category3Name": null,
+                "hotScore": 0,
+                "attrs": null
+            },
+            {
+                "id": 2361,
+                "defaultImg": "http://47.93.148.192:8080/group1/M00/07/D6/rBHu8mN0oduAEz4hAABHUYCE_SA124.jpg",
+                "title": "2",
+                "price": 2.0,
+                "createTime": null,
+                "tmId": null,
+                "tmName": null,
+                "category1Id": null,
+                "category1Name": null,
+                "category2Id": null,
+                "category2Name": null,
+                "category3Id": null,
+                "category3Name": null,
+                "hotScore": 0,
+                "attrs": null
+            },
+            {
+                "id": 3272,
+                "defaultImg": "http://47.93.148.192:8080/group1/M00/08/08/rBHu8mOApaOAEO4FAABanEfjCAs120.jpg",
+                "title": "",
+                "price": 0.0,
+                "createTime": null,
+                "tmId": null,
+                "tmName": null,
+                "category1Id": null,
+                "category1Name": null,
+                "category2Id": null,
+                "category2Name": null,
+                "category3Id": null,
+                "category3Name": null,
+                "hotScore": 0,
+                "attrs": null
+            },
+            {
+                "id": 2158,
+                "defaultImg": "http://139.198.127.41:9000/sph/20221115/his_4.jpg",
+                "title": "卡地亚S10 至尊纪念版 双模5G 骁龙865 120W快充 12GB+256GB 陶瓷黑",
+                "price": 2344.0,
+                "createTime": null,
+                "tmId": null,
+                "tmName": null,
+                "category1Id": null,
+                "category1Name": null,
+                "category2Id": null,
+                "category2Name": null,
+                "category3Id": null,
+                "category3Name": null,
+                "hotScore": 0,
+                "attrs": null
+            },
+            {
+                "id": 3337,
+                "defaultImg": "http://139.198.127.41:9000/sph/20221123/O1CN01baWOrO1hUHx5YNKTl_!!2024314280.jpg_Q75.jpg",
+                "title": "测试",
+                "price": 999.0,
+                "createTime": null,
+                "tmId": null,
+                "tmName": null,
+                "category1Id": null,
+                "category1Name": null,
+                "category2Id": null,
+                "category2Name": null,
+                "category3Id": null,
+                "category3Name": null,
+                "hotScore": 0,
+                "attrs": null
+            }
+        ],
+        "total": 26,
+        "pageSize": 10,
+        "pageNo": 1,
+        "totalPages": 3
+    },
+    "ok": true
+}
