@@ -17,6 +17,7 @@ import Detail from '@/pages/Detail'
 import AddCartSuccess from '@/pages/AddCartSuccess'
 import ShopCart from '@/pages/ShopCart'
 import Trade from '@/pages/Trade'
+import Pay from '@/pages/Pay'
 
 // 第4步：配置路由
 let router =  new VueRouter({
@@ -61,6 +62,13 @@ let router =  new VueRouter({
             component:Trade,
             meta:{show:true}
         },
+        // 支付页
+        {
+            path:'/pay',
+            component:Pay,
+            meta:{show:true}
+        },
+        // 登录页
         {
             path:'/login',
             component:Login,

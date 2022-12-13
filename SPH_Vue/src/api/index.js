@@ -92,7 +92,20 @@ export const reqLogout = () => requests({
 })
 
 // 获取用户地址 /api/user/userAddress/auth/findUserAddressList  方式get
-export const reqGetUserAddressInfo = () => ({
+export const reqGetUserAddressInfo = () => requests({
     url:'/user/userAddress/auth/findUserAddressList',
     method:'get'
+})
+
+// 获取订单交易页商品清单 /api/order/auth/trade
+export const reqOrderInfo = () => requests({
+    url:"/order/auth/trade",
+    method:"get"
+})
+
+// 提交订单  /api/order/auth/submitOrder?tradeNo={tradeNo}
+export const reqSubmitOrder = (tradeNo, data) => requests({
+    url:`/order/auth/submitOrder?tradeNo=${tradeNo}`,
+    method:"post",
+    data:data
 })
