@@ -18,13 +18,23 @@ import store from '@/store'
 import '@/mock/mockServe'
 // 引入Swiper样式 swiper v5.0.1
 import 'swiper/css/swiper.css'
+// 统一接收api里所有请求函数
+import * as API from '@/api'
 
+// 按需引入Element UI组件
+import {Button,MessageBox} from 'element-ui'
+// Element UI组件注册为全局组件
+Vue.component(Button.name, Button)
+// Element UI弹窗 注册在原型尚
+Vue.prototype.$msgbox = MessageBox;
+Vue.prototype.$alert = MessageBox.alert;
 
 new Vue({
   render: h => h(App),
   // 配置全局事件总线
   beforeCreate(){
     Vue.prototype.$bus = this // 此处的this是大写的VM
+    Vue.prototype.$API = API
   },
   // 路由 第2步：注册路由(底下的写法是kv一致省略V)
   //注册路由信息：当这里书写router的时候，组件身上都拥有$route,$router属性
