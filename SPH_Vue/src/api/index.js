@@ -121,3 +121,9 @@ export const reqPayStatus = (orderId) => requests({
     url:`/payment/weixin/createNative/${orderId}`,
     method:'get',
 })
+
+// 获取订单列表 /api/order/auth/{page}/{limit}
+export const reqMyOrderList = (page,limit) => requests({
+    url:`/order/auth/${page}/${limit}`,
+    method:'get',
+})

@@ -22,17 +22,35 @@ import 'swiper/css/swiper.css'
 import * as API from '@/api'
 
 // 按需引入Element UI组件
-import {Button,MessageBox} from 'element-ui'
+import { Button, MessageBox } from 'element-ui'
 // Element UI组件注册为全局组件
 Vue.component(Button.name, Button)
 // Element UI弹窗 注册在原型尚
 Vue.prototype.$msgbox = MessageBox;
 Vue.prototype.$alert = MessageBox.alert;
 
+// 引入并注册图片懒加载插件
+import VueLazyload from 'vue-lazyload'
+// import loadimage from '@/assets/loading.gif'
+const loadimage = require('./assets/loading.gif')
+Vue.use(VueLazyload, {
+  // 懒加载默认图片
+  loading: loadimage,
+})
+
+// 引入并使用自定义插件
+import myPlugins from './plugins/myPlugins'
+Vue.use(myPlugins,{
+  name:'upper'
+})
+
+// 引入表单验证插件
+import "@/plugins/validate"
+
 new Vue({
   render: h => h(App),
   // 配置全局事件总线
-  beforeCreate(){
+  beforeCreate() {
     Vue.prototype.$bus = this // 此处的this是大写的VM
     Vue.prototype.$API = API
   },

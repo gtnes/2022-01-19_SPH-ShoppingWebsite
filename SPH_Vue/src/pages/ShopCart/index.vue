@@ -69,7 +69,12 @@
     </div>
     <div class="cart-tool">
       <div class="select-all">
-        <input class="chooseAll" type="checkbox" :checked="isAllCheck&&cartInfoList.length>0" @click="updateAllCartChecked($event)"/>
+        <input
+          class="chooseAll"
+          type="checkbox"
+          :checked="isAllCheck && cartInfoList.length > 0"
+          @click="updateAllCartChecked($event)"
+        />
         <span> 全选</span>
       </div>
       <div class="option">
@@ -78,7 +83,7 @@
         <a href="#none">清除下柜商品</a>
       </div>
       <div class="money-box">
-        <div class="chosed">已选择 <span>0</span>件商品</div>
+        <div class="chosed">已选择 <span>{{isCheckedGoods}}</span>件商品</div>
         <div class="sumprice">
           <em>总价（不含运费） ：</em>
           <i class="summoney">{{ totalPrice }}</i>
@@ -159,8 +164,11 @@ export default {
     async updataChecked(cart, event) {
       try {
         // 将选中状态的布尔值转换为0和1
-        let checked = event.target.checked ? '1' : '0'
-        await this.$store.dispatch("updataCheckedByid", {skuId:cart.skuId, isChecked:checked});
+        let checked = event.target.checked ? "1" : "0";
+        await this.$store.dispatch("updataCheckedByid", {
+          skuId: cart.skuId,
+          isChecked: checked,
+        });
         this.getData();
       } catch (error) {
         alert(error.message);
@@ -173,26 +181,26 @@ export default {
     },
 
     // 删除选中购物车商品
-    async deleteAllCheckedCart(){
+    async deleteAllCheckedCart() {
       try {
-        await this.$store.dispatch("deleteAllCheckedCart")
-        this.getData()
+        await this.$store.dispatch("deleteAllCheckedCart");
+        this.getData();
       } catch (error) {
-        alert(error.message)
+        alert(error.message);
       }
     },
 
     // 全选 反选
-    async updateAllCartChecked(event){
+    async updateAllCartChecked(event) {
       try {
         // 将全选框的选择状态转换为0和1
-        let isChecked = event.target.checked ? '1' : '0'
-        await this.$store.dispatch('updateAllCartIsChecked', isChecked)
-        this.getData()
+        let isChecked = event.target.checked ? "1" : "0";
+        await this.$store.dispatch("updateAllCartIsChecked", isChecked);
+        this.getData();
       } catch (error) {
-        alert(error.message)
+        alert(error.message);
       }
-    }
+    },
   },
 
   computed: {
@@ -203,11 +211,24 @@ export default {
       return this.cartList.cartInfoList || [];
     },
 
+    // 计算选择商品数量
+    isCheckedGoods() {
+      let sum = 0;
+      this.cartInfoList.forEach((item) => {
+        if (item.isChecked == 1) {
+          sum += 1
+        }
+      });
+      return sum;
+    },
+
     // 计算总价
     totalPrice() {
       let sum = 0;
       this.cartInfoList.forEach((item) => {
-        sum += item.skuNum * item.cartPrice;
+        if (item.isChecked == 1) {
+          sum += item.skuNum * item.cartPrice;
+        }
       });
       return sum;
     },

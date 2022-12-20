@@ -1,4 +1,5 @@
 const { defineConfig } = require('@vue/cli-service')
+
 module.exports = defineConfig({
   transpileDependencies: true
 })
@@ -6,7 +7,8 @@ module.exports = defineConfig({
 module.exports = {
   //关闭eslint
   lintOnSave: false,
-  
+  // 不打包MAP文件
+  productionSourceMap:false,
   // webpack配置代理跨域
   devServer: {
     proxy: {

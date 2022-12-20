@@ -19,7 +19,7 @@ import ShopCart from '@/pages/ShopCart'
 import Trade from '@/pages/Trade'
 import Pay from '@/pages/Pay'
 import PaySuccess from '@/pages/PaySuccess'
-import Center from '@/pages/Center'
+// import Center from '@/pages/Center'
 // 引入二级路由组件
 import MyOrder from '@/pages/Center/myOrder'
 import GroupOrder from '@/pages/Center/groupOrder'
@@ -31,7 +31,7 @@ let router = new VueRouter({
         // 个人中心
         {
             path: '/center',
-            component: Center,
+            component: () => import('@/pages/Center'),  // 路由懒加载
             meta: { show: true },
             // 二级路由组件
             children:[
@@ -43,6 +43,7 @@ let router = new VueRouter({
                     path: 'grouporder',
                     component: GroupOrder,
                 },
+                // 路由跳转
                 {
                     path: '/center',
                     redirect: '/center/myorder',
@@ -86,19 +87,45 @@ let router = new VueRouter({
         {
             path: '/trade',
             component: Trade,
-            meta: { show: true }
+            meta: { show: true },
+            // 路由独享守卫
+            // 只能从购物车页面进入订单交易页面
+            beforeEnter:(to, from, next)=>{
+                if(from.path=='/shopcart'){
+                    next()
+                }else{
+                    // 其它路由组件而来则停留在当前（中断当前导航）
+                    next(false)
+                }
+            }
         },
         // 支付页
         {
             path: '/pay',
             component: Pay,
-            meta: { show: true }
+            meta: { show: true },
+            // 路由独享守卫
+            beforeEnter:(to, from, next)=>{
+                if(from.path=='/trade'){
+                    next()
+                }else{
+                    next(false)
+                }
+            }
         },
         // 支付成功页
         {
             path: '/paysuccess',
             component: PaySuccess,
-            meta: { show: true }
+            meta: { show: true },
+            // 路由独享守卫
+            beforeEnter:(to, from, next)=>{
+                if(from.path=='/pay'){
+                    next()
+                }else{
+                    next(false)
+                }
+            }
         },
         // 登录页
         {
@@ -159,8 +186,15 @@ router.beforeEach(async (to, from, next) => {
             }
         }
     } else {
-        // 未登录
-        next()
+        // 未登录 去交易、支付、个人中心相关页面跳转到登录页
+        // 去的不是上面这些路由就放行
+        let toPath = to.path
+        if( toPath.indexOf('/trade') != -1 || to.path.indexOf('/pay')!=-1 || to.path.indexOf('/center')!=-1 ){
+            // 将未登录时要去的路由添加到登录页面路由的query参数中
+            next('login?redirect=' + toPath)
+        }else{
+            next()
+        }
     }
 })
 

@@ -87,7 +87,7 @@
                   <div class="p-img">
                     <!-- 点击商品图片跳转到详情页 -->
                     <router-link :to="`/detail/${goods.id}`">
-                      <img :src="goods.defaultImg"/>
+                      <img v-lazy="goods.defaultImg" />
                     </router-link>
                   </div>
                   <div class="price">
